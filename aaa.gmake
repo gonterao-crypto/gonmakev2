@@ -1,0 +1,29 @@
+; aaa.gmake
+^files
+    -white
+    @./src/*.cpp
+^eachbuildcommand
+    @clear
+    ccache clang++ -c --target=x86_64-w64-mingw32 -std=c++26 -O0 -fdiagnostics-absolute-paths -fexperimental-library
+    @space
+    -fcolor-diagnostics -fansi-escape-codes -MMD
+    @space
+    @infilepath
+    @space
+    -o
+    @space
+    @outfilepath
+    @space
+    -MF
+    @space
+    @outfilepath
+    .d
+^linkbuildcommand
+    @clear
+    clang++
+    @space
+    @temppaths
+    -o
+    @outfilepath
+    @space
+    --target=x86_64-w64-mingw32 -fuse-ld=lld -std=c++26 -fdiagnostics-absolute-paths

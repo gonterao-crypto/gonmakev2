@@ -1,0 +1,1 @@
+program --gmakefile aaa.gmake --optionecho --fileserachcardsecho --dir ./ --buildfileecho --buildcommandecho --thread 2 --diff
