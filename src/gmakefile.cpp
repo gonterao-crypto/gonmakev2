@@ -66,12 +66,13 @@ void getdependences(fs::path dfilepath, std::vector<fs::path>& h) {
 
 }
 
-bool isrecompile(fs::path&& objectfilepath, fs::path&& dfilepath, fs::path&& cfilepath) {
+bool isrecompile(arg& a, fs::path&& objectfilepath, fs::path&& dfilepath, fs::path&& cfilepath) {
     if (!fs::exists(objectfilepath) || !fs::exists(dfilepath)) return true;
     fs::file_time_type objectfilelast = fs::last_write_time(objectfilepath);
 
     std::vector<fs::path> dependencelist;
     dependencelist.emplace_back(cfilepath);
+    dependencelist.emplace_back(a.gonmakefilepath);
     getdependences(dfilepath, dependencelist);
     bool objyorinew = false;
     for (int i = 0; i < dependencelist.size(); ++i) {
@@ -232,7 +233,7 @@ bool loadqueues(arg& a, std::vector<buildqueue>& b, css_t& cssl, std::string& ob
             }
             kn += ".o";
             if (a.isdiff) {
-                if (isrecompile(maketemppath / kn, maketemppath / (kn + ".d"), k)) {
+                if (isrecompile(a, maketemppath / kn, maketemppath / (kn + ".d"), k)) {
                     buildqueue q;
                     q.filepath = k;
                     q.outpath = maketemppath / kn;

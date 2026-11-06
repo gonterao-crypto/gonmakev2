@@ -91,5 +91,13 @@ bool argparse(arg& rg, int argc, char *argv[]) {
             step = argparse_step::first;
         }
     }
+    if (rg.gonmakefilepath.empty()) {
+        genericerror("GMake file is none.");
+        return false;
+    }
+    if (rg.builddir.empty()) {
+        genericerror("Build directory is none.");
+        return false;
+    }
     return true;
 }

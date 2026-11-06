@@ -8,7 +8,9 @@
 
 int main(int argc, char *argv[]) {
     arg mainarg;
-    argparse(mainarg, argc, argv);
+    bool sr = true;
+    sr = argparse(mainarg, argc, argv);
+    if (!sr) return 1;
     if (mainarg.isargecho) {
         std::cout << "==ARGS(OPTIONS)===" << std::endl;
         std::cout << "isargecho: "; cout_bool(mainarg.isargecho); std::cout << std::endl;
@@ -20,6 +22,10 @@ int main(int argc, char *argv[]) {
         std::cout << "outprogrampath: " << '"' << mainarg.outprogrampath.string() << '"' << std::endl; 
         std::cout << "threadcount: " << mainarg.threadcount << std::endl; 
     }
+
+
+
+
     std::vector<buildqueue> b;
     css_t cssl;
     std::vector<commandstringobj>& css = cssl.eachcss;
@@ -35,7 +41,8 @@ int main(int argc, char *argv[]) {
     linkcss.emplace_back(commandstringobj_type::temppaths, "");
     linkcss.emplace_back(commandstringobj_type::planetext, " -o ");
     linkcss.emplace_back(commandstringobj_type::outpath, "");
-    loadqueues(mainarg, b, cssl, objectfilenames);
+    sr = loadqueues(mainarg, b, cssl, objectfilenames);
+    if (!sr) return 1;
     if (mainarg.isfileserachcardsecho) {
         std::cout << "==FILESERCHCARDS===" << std::endl;
         for (int i = 0; i < mainarg.filesearchcards.size(); ++i) {
@@ -54,6 +61,7 @@ int main(int argc, char *argv[]) {
     if (mainarg.isbuildcommandecho) {
         std::cout << "==BUILDCOMMANDS==" << std::endl;
     }
-    build(mainarg, b, cssl, objectfilenames);
+    sr = build(mainarg, b, cssl, objectfilenames);
+    if (!sr) return 1;
     return 0;
 }
