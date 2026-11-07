@@ -4,7 +4,7 @@
     @./src/*.cpp
 ^eachbuildcommand
     @clear
-    ccache clang++ -c --target=x86_64-w64-mingw32 -std=c++26 -O0 -fdiagnostics-absolute-paths -fexperimental-library
+    ccache clang++ -c --target=x86_64-w64-mingw32 -std=c++26 -O3 -fdiagnostics-absolute-paths -fexperimental-library
     @space
     -fcolor-diagnostics -fansi-escape-codes -MMD
     @space
