@@ -61,8 +61,8 @@ bool argparse(arg& rg, int argc, char *argv[]) {
                 rg.isbuildfilesecho = true;
             } else if (strn == "--buildcommandecho") {
                 rg.isbuildcommandecho = true;
-            } else if (strn == "--fileserachcardsecho") {
-                rg.isfileserachcardsecho = true;
+            } else if (strn == "--filesearchcardsecho") {
+                rg.isfilesearchcardsecho = true;
             } else if (strn == "--diff") {
                 rg.isdiff = true;
             } else if (strn == "--demo") {

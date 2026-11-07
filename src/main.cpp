@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     if (mainarg.isargecho) {
         std::cout << "==ARGS(OPTIONS)===" << std::endl;
         std::cout << "isargecho: "; cout_bool(mainarg.isargecho); std::cout << std::endl;
-        std::cout << "isfileserachcardsecho: "; cout_bool(mainarg.isfileserachcardsecho); std::cout << std::endl;
+        std::cout << "isfilesearchcardsecho: "; cout_bool(mainarg.isfilesearchcardsecho); std::cout << std::endl;
         std::cout << "isbuildfilesecho: "; cout_bool(mainarg.isbuildfilesecho); std::cout << std::endl;
         std::cout << "isdemo: "; cout_bool(mainarg.isdemo); std::cout << std::endl;
         std::cout << "isdiff: "; cout_bool(mainarg.isdiff); std::cout << std::endl;
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
     linkcss.emplace_back(commandstringobj_type::outpath, "");
     sr = loadqueues(mainarg, b, cssl, objectfilenames);
     if (!sr) return 1;
-    if (mainarg.isfileserachcardsecho) {
+    if (mainarg.isfilesearchcardsecho) {
         std::cout << "==FILESERCHCARDS===" << std::endl;
         for (int i = 0; i < mainarg.filesearchcards.size(); ++i) {
             filesearch_card& now = mainarg.filesearchcards[i];

@@ -1,1 +1,1 @@
-gonmakev2 --gmakefile aaa.gmake --optionecho --fileserachcardsecho --dir ./ --buildfileecho --buildcommandecho --thread 2 --diff --outpath gonmakev2_selfbuild.exe
+gonmakev2 --gmakefile aaa.gmake --optionecho --filesearchcardsecho --dir ./ --buildfileecho --buildcommandecho --thread 2 --diff --outpath gonmakev2_selfbuild.exe

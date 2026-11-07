@@ -44,13 +44,13 @@ gonmakev2 --gmakefile ＜gmakeファイル＞ --dir ./ --outpath ＜出力する
 |      | `--optionecho` | `<BOOL>`（なし） | `false` | オプションをコンソール上に出力することを指定します。 |
 |      | `--buildfileecho` | `<BOOL>`（なし） | `false` | ビルドするファイルをコンソール上に出力することを指定します。 |
 |      | `--buildcommandecho` | `<BOOL>`（なし） | `false` | ビルドするコマンドをコンソール上に出力することを指定します。 |
-|      | `--fileserachcardsecho` | `<BOOL>`（なし） | `false` | ファイルを検索する条件をコンソール上に出力することを指定します。 |
+|      | `--filesearchcardsecho` | `<BOOL>`（なし） | `false` | ファイルを検索する条件をコンソール上に出力することを指定します。 |
 |      | `--diff` | `<BOOL>`（なし） | `false` | ファイルと出力されたファイルの更新日時を比較してコンパイル回数を削減します。特別なオプションが必要です。 |
 |      | `--demo` | `<BOOL>`（なし） | `false` | デモモードを有効化します。[^2] |
 <!-- |      | `` | `` | `` |  | -->
 
 ### 発展コマンド例
-`gonmakev2 --gmakefile aaa.gmake --optionecho --fileserachcardsecho --dir ./ --buildfileecho --buildcommandecho --thread 2 --diff --outpath gonmakev2_selfbuild.exe`
+`gonmakev2 --gmakefile aaa.gmake --optionecho --filesearchcardsecho --dir ./ --buildfileecho --buildcommandecho --thread 2 --diff --outpath gonmakev2_selfbuild.exe`
 
 ### gmakeファイルとは。。。
 
