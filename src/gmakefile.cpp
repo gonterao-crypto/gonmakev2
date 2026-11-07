@@ -38,7 +38,7 @@ void getdependences(fs::path dfilepath, std::vector<fs::path>& h) {
         one += line;
     }
     bool iskoron = false;
-    std::string& buffer = line;
+    std::string buffer;
     for (int i = 0; i < one.size(); ++i) {
         if (iskoron) {
             if (one[i] == ' ') {
