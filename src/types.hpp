@@ -20,7 +20,7 @@ struct filesearch_card {
 
 struct arg {
     bool isargecho = false;
-    bool isfileserachcardsecho = false;
+    bool isfilesearchcardsecho = false;
     bool isbuildfilesecho = false;
     bool isbuildcommandecho = false;
     bool isdemo = false;
