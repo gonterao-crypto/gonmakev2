@@ -60,10 +60,6 @@ void getdependences(fs::path dfilepath, std::vector<fs::path>& h) {
             }
         }
     }
-    for (int i = 0; i < h.size(); ++i) {
-        std::cout << h[i] << std::endl;
-    }
-
 }
 
 bool isrecompile(arg& a, fs::path&& objectfilepath, fs::path&& dfilepath, fs::path&& cfilepath) {
