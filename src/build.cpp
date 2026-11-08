@@ -130,6 +130,8 @@ bool build(arg& aru, std::vector<buildqueue>& queue, css_t& cssl, std::string& o
             int er = std::system(command.c_str());
             if (er != 0) return false;
         }
+    } else {
+        return false;
     }
     /*
     if (wo.errork->load() == 0) {
