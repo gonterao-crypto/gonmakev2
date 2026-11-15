@@ -67,6 +67,8 @@ bool argparse(arg& rg, int argc, char *argv[]) {
                 rg.isdiff = true;
             } else if (strn == "--demo") {
                 rg.isdemo = true;
+            } else if (strn == "--rsp") {
+                rg.isrspfile = true;
             } else { commandlineerror(n); }
         } else if (step == argparse_step::gonmakefilewait) {
             rg.gonmakefilepath = n;

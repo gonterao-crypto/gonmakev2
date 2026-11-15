@@ -2,9 +2,11 @@
 
 
 #include <iostream>
+#include <fstream>
 #include <thread>
 #include <atomic>
 #include <syncstream>
+#include <string_view>
 
 
 struct workerobj {
@@ -114,7 +116,24 @@ bool build(arg& aru, std::vector<buildqueue>& queue, css_t& cssl, std::string& o
     for (int i = 0; i < aru.threadcount; i++) {
         threads[i].join();
     }
-    std::string& gattai = objectfilenames;
+
+
+
+    std::string pathkakomae = (maketemppath / "commline.rsp").string();
+    std::string_view pathkako = pathkakomae;
+    pathkako.remove_prefix(2);
+    std::string rspss = "@" + std::string(pathkako) + " ";
+    std::string_view gattai = objectfilenames;
+    
+    if (aru.isrspfile) {
+        std::ofstream file(maketemppath / "commline.rsp");
+        if (!file.is_open()) return false;
+        file << gattai;
+        gattai = rspss;
+    } else {
+
+    }
+
     if (wo.errorcount->load() == 0) {
         std::string command = "";
         for (int i = 0; i < linkcss.size(); ++i) {

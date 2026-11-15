@@ -25,6 +25,7 @@ struct arg {
     bool isbuildcommandecho = false;
     bool isdemo = false;
     bool isdiff = false;
+    bool isrspfile = false;
     unsigned int threadcount = 2;
     fs::path gonmakefilepath = "";
     fs::path builddir = "";
