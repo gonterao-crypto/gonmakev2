@@ -44,12 +44,7 @@ void getdependences(fs::path dfilepath, std::vector<fs::path>& h) {
                 continue;
             }
             if (one[i] == '\\') {
-                while (one[i] == ' ' || one[i] == '\\') {
-                    ++i;
-                    if (one[i] == '\0') {
-                        break;
-                    }
-                }
+                continue;
             }
             {
                 std::string buffer;
@@ -60,6 +55,7 @@ void getdependences(fs::path dfilepath, std::vector<fs::path>& h) {
                     buffer += one[i];
                     ++i;
                 }
+                --i;
                 h.emplace_back(buffer);
             }
         } else {
